@@ -1,0 +1,58 @@
+  <html>
+  <body>
+  <div class="container">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <h1>Contact</h1>
+    <p> <%= contactContent %> </p>
+    
+    <div id="contact">
+    	
+      <template v-if="show === 'bio'">
+        <h1>{{ bio }}</h1>
+      </template>
+
+      <template v-if="show === 'arjun'">
+            <h3>{{ arjun }}</h3>
+        </template>
+
+    	<template v-else-if="show === 'dhruv'">
+      	    <h3>{{ dhruv }}</h3>
+    	</template>
+
+      <template v-else-if="show === 'disha'">
+            <h3>{{ disha }}</h3>
+      </template>
+
+      <template v-else-if="show === 'harshil'">
+          <h3>{{ harshil }}</h3>
+      </template>
+
+    	<!-- <p v-else>Do you also see me?, else part is working now</p> -->
+
+        <span>Click for bio</span><br />
+    	  <button style="margin: 20px;" @click="show = 'arjun'" class="button">Arjun's Bio</button>
+        <button style="margin: 20px;" @click="show = 'dhruv'" class="button">Dhruv's Bio</button>
+        <button style="margin: 20px;" @click="show = 'disha'" class="button">Disha's Bio</button>
+        <button style="margin: 20px;" @click="show = 'harshil'" class="button">Harshil's Bio</button>
+        
+  	</div>
+    <a href="/">Go Back</a>
+  </div>
+    <script type="text/javascript">  
+      new Vue({
+        el: '#contact',
+        data: {
+              bio: "So here's a little about ourselves..",
+              arjun: "Hey I'm Arjun, I am passionate in fitness activities, I prefer books over movies and I want to be a Full Stack Developer.",
+              dhruv: "Hey I'm Dhruv, Web Development has always been my constant interest in tech field. I love solving competitive real world problems using code.",
+              disha: "Hey I'm Disha, I am interested in competitive coding and building projects that solve a social problem.",
+              harshil: "Hey I'm Harshil ! I love listening to music, reading books and watching Anime. I love coding and I want to be Front End Web Developer",
+          show: 'bio'
+        }
+      });
+           
+    </script>
+  </body>
+  </html>
+

@@ -1,0 +1,50 @@
+
+</div>
+<div class="footer-padding">
+  <div class="footer">
+    <div id="app">
+      <quote></quote>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">  
+
+Vue.component('quote',{
+  data:function() {
+    return {
+        i: 0,
+        quotes:[
+        '"Change how you see and see how you change"',
+        '"A drop of ink can make a million think"',
+        '"A moment is all there is"',
+        '"A wise man once said nothing"',
+        '"People write because no one listens"',
+        ],
+    }
+  },
+  methods:{
+    Qfunction: function(){
+      this.i = this.i + 1
+      if(this.i<this.quotes.length){
+        return this.i
+      }
+      else{
+        this.i=0
+        return this.i
+      }
+    }
+  },
+   
+  template:`<p>
+            <span>{{ quotes[i] }}</span>
+            <button style="padding: 2px;" class="btn btn-info" @click="Qfunction()">...</button>
+            </p>`
+})
+
+var app = new Vue({
+  el: '#app',
+  
+})
+</script>
+</body>
+</html>
